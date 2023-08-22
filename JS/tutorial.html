@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Tutorial</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            border: 2px solid red;
+            margin: 3px;
+            background-color: aqua;
+            padding: 9px;
+        }
+
+        .color{
+          background-color: blueviolet;
+        }
+
+        .mix{
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          background-color: aquamarine;
+        }
+
+        .khoka_babu{
+          background-color: hotpink;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <div id="firstcontainer" class="container">
+      <button id="btn" onclick="clicked()">click me</button>
+      <p>
+           This is Asus Laptop
+      </p>
+    </div>
+
+    <div class="container">
+      <h1>container</h1>
+    </div>
+
+
+    <div class="container">
+      <h4>43y654547345fgv </h4>
+
+    </div>
+  </body>
+
+  <script>
+
+//1. Ways to print in JS
+    // console.log("hello world");    
+    // alert("me");
+    //document.write("This is document write")
+
+
+//2. JavaScript Console API (Application Programming Interface)
+//     console.log("hello world", 4+5, "Another log");    
+//     console.warn("this is a warning");
+//     console.error("error");
+
+//     var str="fact";
+
+
+//     var object = {
+
+// a:233,
+// b:"soln",
+// d:{
+//     cc:33,
+//     e:"nope"
+// }
+// }
+
+// console.log(object);
+
+
+// var und;
+// console.log(und);
+
+
+// var arr = [1,2,3,4,5];
+// console.log(arr);e3
+
+
+
+// var a = 5;
+// var b = 6;
+
+// console.log(a==b)
+
+
+// function mult( a, b){
+
+//     return (a*b);
+// }
+
+// c = mult(3,5);
+// console.log();
+
+
+
+var arr = [12,253,324,2,334,23];
+
+// for(var i = 0; i<arr.length; i++)
+// {
+//     console.log(arr[i]);
+// }
+
+// arr.forEach(function(element){
+//     console.log(element);
+// })
+
+
+// let j = 0;
+
+// while(j<arr.length)
+// {
+//     console.log(arr[j])
+//     if (j==2)
+//     // break;
+//     continue;
+//     j++;
+// }
+
+//  let myString = "hi, my name is dawk";
+// console.log(myString.length);
+// console.log(myString.indexOf("name"))
+// console.log(myString.slice(2,12))
+// d=myString.replace("name","game")
+// console.log(d,myString)
+
+// let mydate = new Date();
+// console.log(mydate);
+// console.log(mydate.getUTCDay());
+// console.log(mydate.getFullYear());
+
+
+// DOM MANIPULATION
+let elemID = document.getElementById('btn')
+// console.log(elemID)
+
+let elemClass = document.getElementsByClassName('container')
+// console.log(elemClass)
+
+// elemClass[1].style.background = "purple"   //1st element of container class being manipulated through DOM 
+// elemClass[1].style.font = "10px solid bold"
+// elemClass[1].style.background = "purple"
+// elemClass[0].style.background = "green"    //0th element now
+
+
+elemClass[0].classList.add("color")   //adding a new class to the element
+elemClass[1].classList.add("mix") 
+
+
+// elemClass[0].classList.remove("color")  //removing the added class
+// // elemClass[0].classList.remove("container")  //removed every class
+
+
+// elemClass[0].innerHTML   //accessing the inner HTML
+// elemClass[0].innerText   //returns inner text of an HTML element                                                                                                                                                                                                                                                                                    
+
+
+// console.log(elemClass[0].innerHTML)
+// console.log(elemClass[0].innerText)
+
+
+
+
+// tn = document.getElementsByTagName('div')  //finding nay tag 
+// console.log(tn)
+
+// addElement = document.createElement('p');     //creating a paragraph (using createElement) inside 0th div accessed bt tn[0], then adding it inside the div using *(.appedChild)
+// addElement.innerText = "This is just created paragraph";
+// tn[0].appendChild(addElement);
+
+
+
+addElement1 = document.createElement('p');     //replacing
+addElement1.innerText = "This is just created paragraph";
+tn[0].appendChild(addElement1)
+
+addElement2 = document.createElement('b');  
+addElement2.innerText = "This is just created bold";
+
+tn[0].replaceChild(addElement2,addElement1);
+
+
+
+
+//.removeChild(element)   -> Removes the element
+//.querySelector(element)  ->Returns only one node
+//.querySelectorAll(element)  ->Returns all node
+
+
+sel = document.querySelectorAll('h1');
+console.log(sel);
+
+
+
+
+//EVENTS IN JS
+function clicked()
+{
+  console.log("The button was clicked")
+}
+
+
+window.onload = function()
+{
+  console.log("Loaded")
+
+}
+
+
+// firstcontainer.addEventListener('click', function(){   //all these working because the EventListner is attached to the firstcontainer (i.e firstcontainer.addEventListener)
+//   console.log("it has been clicked on container")
+// })
+
+
+// firstcontainer.addEventListener('mouseover', function(){
+//   console.log("mouse on container")
+// })
+
+// firstcontainer.addEventListener('mouseout', function(){
+//   console.log("mouse is out of container")
+// })
+
+// firstcontainer.addEventListener('mouseup', function(){
+//   console.log("mouse up on container")
+// })
+
+// firstcontainer.addEventListener('mousedown', function(){
+//   console.log("mouse down on container")
+// })
+
+
+
+//ARROW FUNCTION
+// function sum(a,b)
+// {
+//   return a+b;
+// }
+
+// summ = (a,b)=>{
+//   return a+b;
+// }
+
+
+
+//JS SET-TIMEOUT AND SET-INTERVAL
+
+// logIn = ()=>{          //this is an arrow function for log in
+//   console.log("you are logged in");
+// }
+// setTimeout(logIn, 3000)    //calling thr function using settimeout-
+// setInterval(logIn, 3000)    //calling thr function using settimeout-
+// clr = setInterval(logIn, 3000)  //
+
+
+
+
+
+
+//LOCAL STORAGE IN JS
+//JSON
+
+// obj = {name: "Anumoy", length:1}
+// jso = JSON.stringify(obj);
+// console.log(jso)
+
+let myDate = new Date()
+console.log(myDate)
+
+// parsed = JSON.parse('{"name":"Anumoy","length":1}')
+// console.log(parsed)
+
+let elemClass001 = document.getElementsByClassName("container");
+console.log(elemClass001)
+
+
+// elemClass001[2].style.background = "yellow"
+
+elemClass001[2].classList.add("khoka_babu")
+
+tagName = getElementsByTagName('div');
+console.log(tagName);
+
+
+  </script>                                                                                                                                                                            
+</html>
